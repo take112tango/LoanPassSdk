@@ -1,0 +1,77 @@
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using Take112Tango.Libs.LoanPassSdk.Dynamic;
+using Take112Tango.Libs.LoanPassSdk.Utils;
+
+
+// ReSharper disable InconsistentNaming
+// ReSharper disable IdentifierTypo
+// ReSharper disable UnusedMember.Global
+// 
+// This source code was auto-generated in codegen@timestamp
+// 
+namespace codegen@package
+{
+    /// <summary>
+    /// Field definitions auto generated from LoanPass API for strong type checking
+    /// </summary>
+    [GeneratedCode("codegen@gen-tool-name", "codegen@gen-tool-ver")]
+    [JsonConverter(typeof(StringEnumConverter))]
+    public enum codegen@class
+    {
+        codegen@x1
+    }
+
+    public static class codegen@classExt
+    {        
+        private static readonly Dictionary<string, codegen@class> Value2Enum;
+        private static readonly Dictionary<codegen@class, string> Enum2Value;
+		private static readonly Dictionary<string, HashSet<string>> ValueToVariantIds;
+        static KnownEnumIdExt()
+        {
+            var values = Enum.GetValues(typeof(codegen@class));
+            Value2Enum = Helper.MapValue2Obj<codegen@class>(values);
+            Enum2Value = Helper.MapObj2Value<codegen@class>(values);
+
+			static HashSet<string> ValueGenerator(object enumVal)
+            {
+                var attribute = ((Enum)enumVal).GetAttributeOfType<TextTagsAttribute>();
+                return new HashSet<string>(attribute.Tags);
+
+            }
+
+            ValueToVariantIds = Helper.MapValue2Obj(values, ValueGenerator);
+        }
+
+        public static codegen@class? ToEnum(string key)
+        {
+            return Value2Enum.GetValueOrDefault(key);
+        }
+
+        public static string ToValue(codegen@class key)
+        {
+            return Enum2Value.GetValueOrDefault(key);
+        }
+
+		public static HashSet<string> ToVariantIds(string key)
+        {
+            return ValueToVariantIds.GetValueOrDefault(key);
+        }
+
+        public static bool IsValidVariantId(string key, string variantId)
+        {
+            HashSet<string> varianIdSet = ValueToVariantIds.GetValueOrDefault(key);
+            return varianIdSet != null && varianIdSet.Contains(variantId);
+        }
+
+        public static void ValidateVariantId(string key, string variantId)
+        {
+            if (!IsValidVariantId(key, variantId))
+                throw new KeyNotFoundException($"codegen@class ({key}) does not contain VariantId ({variantId})");
+        }
+    }
+}

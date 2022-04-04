@@ -1,0 +1,69 @@
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Collections.Generic;
+using System.Runtime.Serialization;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using Take112Tango.Libs.LoanPassSdk.Dynamic;
+using Take112Tango.Libs.LoanPassSdk.Models.Fields;
+
+
+// ReSharper disable InconsistentNaming
+// ReSharper disable IdentifierTypo
+// ReSharper disable UnusedMember.Global
+// 
+// This source code was auto-generated in codegen@timestamp
+// 
+namespace codegen@package
+{
+	/// <summary>
+	/// Field definitions auto generated from LoanPass API for strong type checking
+	/// </summary>
+	[GeneratedCode("codegen@gen-tool-name", "codegen@gen-tool-ver")]
+	[JsonConverter(typeof(StringEnumConverter))]
+	public enum codegen@class
+	{ 
+		codegen@x1
+	}
+
+	public static class codegen@classExt
+	{		
+		private static readonly Dictionary<string, codegen@class> Value2Enum;
+        private static readonly Dictionary<codegen@class, string> Enum2Value;
+        private static readonly Dictionary<codegen@class, LPFieldTagAttribute> Enum2LPFieldTag;
+
+		static KnownFieldIdExt()
+		{
+			var values = Enum.GetValues(typeof(codegen@class));
+
+			Value2Enum = Helper.MapValue2Obj<codegen@class>(values);
+            Enum2Value = Helper.MapObj2Value<codegen@class>(values);
+            Enum2LPFieldTag = Helper.MapObj2LPFieldTag<codegen@class>(values);
+		}
+
+		public static codegen@class? ToEnum(string key)
+		{
+			return Value2Enum.GetValueOrDefault(key);
+		}
+
+        public static string ToValue(codegen@class key)
+        {
+            return Enum2Value.GetValueOrDefault(key);
+        }
+
+        public static LPFieldTagAttribute ToLPFieldTag(codegen@class key)
+        {
+            return Enum2LPFieldTag.GetValueOrDefault(key);
+        }
+
+		public static LPFieldTagAttribute Validate(this LPFieldTagAttribute tag, FieldValueTypeOpt expectedType, string context)
+		{
+            if (tag == null)
+				throw new ArgumentNullException($"{context} tag cannot be null.");
+			if (tag.Type != expectedType)
+				throw new ArgumentException($"{context} tag expects type of {expectedType} vs. actual type of {tag.Type}");
+            return tag;
+        }
+
+	}
+}

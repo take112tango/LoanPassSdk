@@ -1,0 +1,95 @@
+{
+  "currentTime": "2021-06-07T21:10:28.913183Z",
+  "creditApplicationFields": [
+    {
+      "fieldId": "field@loan-purpose",
+      "value": {
+        "type": "enum",
+        "enumTypeId": "loan-purpose",
+        "variantId": "purchase"
+      }
+    },
+    {
+      "fieldId": "field@appraised-value",
+      "value": {
+        "type": "number",
+        "value": 750000.0
+      }
+    },
+    {
+      "fieldId": "field@decision-credit-score",
+      "value": {
+        "type": "number",
+        "value": 750.0
+      }
+    },
+    {
+      "fieldId": "field@state",
+      "value": {
+        "type": "string",
+        "value": "CA"
+      }
+    },
+    {
+      "fieldId": "field@property-type",
+      "value": {
+        "type": "enum",
+        "enumTypeId": "property-type",
+        "variantId": "single-family"
+      }
+    },
+    {
+      "fieldId": "field@purchase-price",
+      "value": {
+        "type": "number",
+        "value": 750000.0
+      }
+    },
+    {
+      "fieldId": "field@sub-product-category",
+      "value": {
+        "type": "enum",
+        "enumTypeId": "sub-product-category",
+        "variantId": "stabilized-bridge"
+      }
+    },
+    {
+      "fieldId": "field@borrower-type",
+      "value": {
+        "type": "enum",
+        "enumTypeId": "borrower-type",
+        "variantId": "us-citizen"
+      }
+    },
+    {
+      "fieldId": "field@base-loan-amount",
+      "value": {
+        "type": "number",
+        "value": 500000.0
+      }
+    },
+    {
+      "fieldId": "field@desired-product-category",
+      "value": {
+        "type": "enum",
+        "enumTypeId": "product-category",
+        "variantId": "bridge"
+      }
+    },
+    {
+      "fieldId": "field@desired-loan-term",
+      "value": {
+        "type": "duration",
+        "count": 12.0,
+        "unit": "months"
+      }
+    },
+    {
+      "fieldId": "field@number-of-units",
+      "value": {
+        "type": "number",
+        "value": 1.0
+      }
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+﻿./Take112Tango.Libs.LoanPassSdk.TypeGenerator.exe -i "Samples\config_response.json" -l java -t enum field

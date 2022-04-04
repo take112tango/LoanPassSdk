@@ -1,0 +1,2110 @@
+{
+  "creditApplicationFields": [
+    {
+      "id": "field@loan-purpose",
+      "name": "Loan Purpose",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "loan-purpose"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@first-time-homebuyer",
+      "name": "First Time Homebuyer",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "yes-no"
+      },
+      "condition": {
+        "type": "parent-field-has-value",
+        "parentFieldId": "field@loan-purpose",
+        "value": {
+          "type": "enum",
+          "enumTypeId": "loan-purpose",
+          "variantId": "purchase"
+        }
+      }
+    },
+    {
+      "id": "field@refinance-type",
+      "name": "Refinance Type",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "refinance-type"
+      },
+      "condition": {
+        "type": "parent-field-has-value",
+        "parentFieldId": "field@loan-purpose",
+        "value": {
+          "type": "enum",
+          "enumTypeId": "loan-purpose",
+          "variantId": "refinance"
+        }
+      }
+    },
+    {
+      "id": "field@borrower-type",
+      "name": "Borrower Type",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "borrower-type"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@occupancy-type",
+      "name": "Occupancy Type",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "occupancy-type"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@property-rental-income",
+      "name": "Property Rental Income",
+      "valueType": {
+        "type": "number",
+        "minimum": null,
+        "maximum": null,
+        "precision": 2,
+        "style": "dollar"
+      },
+      "condition": {
+        "type": "parent-field-has-value",
+        "parentFieldId": "field@occupancy-type",
+        "value": {
+          "type": "enum",
+          "enumTypeId": "occupancy-type",
+          "variantId": "investment"
+        }
+      }
+    },
+    {
+      "id": "field@property-type",
+      "name": "Property Type",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "property-type"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@property-type-other-description",
+      "name": "Property Type Other Description",
+      "valueType": {
+        "type": "string",
+        "format": "plain"
+      },
+      "condition": {
+        "type": "parent-field-has-value",
+        "parentFieldId": "field@property-type",
+        "value": {
+          "type": "enum",
+          "enumTypeId": "property-type",
+          "variantId": "other"
+        }
+      }
+    },
+    {
+      "id": "field@condo-type",
+      "name": "Condo Type",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "condo-type"
+      },
+      "condition": {
+        "type": "parent-field-has-value",
+        "parentFieldId": "field@property-type",
+        "value": {
+          "type": "enum",
+          "enumTypeId": "property-type",
+          "variantId": "condominium"
+        }
+      }
+    },
+    {
+      "id": "field@decision-credit-score",
+      "name": "Decision Credit Score",
+      "valueType": {
+        "type": "number",
+        "minimum": "1",
+        "maximum": null,
+        "precision": 0,
+        "style": "plain"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@number-of-units",
+      "name": "Number of Units",
+      "valueType": {
+        "type": "number",
+        "minimum": null,
+        "maximum": null,
+        "precision": 0,
+        "style": "plain"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@base-loan-amount",
+      "name": "Base Loan Amount",
+      "valueType": {
+        "type": "number",
+        "minimum": "1",
+        "maximum": null,
+        "precision": 2,
+        "style": "dollar"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@cash-out-amount",
+      "name": "Cash Out Amount",
+      "valueType": {
+        "type": "number",
+        "minimum": null,
+        "maximum": null,
+        "precision": 2,
+        "style": "dollar"
+      },
+      "condition": {
+        "type": "parent-field-has-value",
+        "parentFieldId": "field@refinance-type",
+        "value": {
+          "type": "enum",
+          "enumTypeId": "refinance-type",
+          "variantId": "cash-out"
+        }
+      }
+    },
+    {
+      "id": "field@appraised-value",
+      "name": "Appraised Value",
+      "valueType": {
+        "type": "number",
+        "minimum": "1",
+        "maximum": null,
+        "precision": 2,
+        "style": "dollar"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@purchase-price",
+      "name": "Purchase Price",
+      "valueType": {
+        "type": "number",
+        "minimum": "1",
+        "maximum": null,
+        "precision": 2,
+        "style": "dollar"
+      },
+      "condition": {
+        "type": "parent-field-has-value",
+        "parentFieldId": "field@loan-purpose",
+        "value": {
+          "type": "enum",
+          "enumTypeId": "loan-purpose",
+          "variantId": "purchase"
+        }
+      }
+    },
+    {
+      "id": "field@desired-product-category",
+      "name": "Desired Product Category",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "product-category"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@sub-product-category",
+      "name": "Sub-Product Category",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "sub-product-category"
+      },
+      "condition": {
+        "type": "parent-field-has-value",
+        "parentFieldId": "field@desired-product-category",
+        "value": {
+          "type": "enum",
+          "enumTypeId": "product-category",
+          "variantId": "bridge"
+        }
+      }
+    },
+    {
+      "id": "field@total-cost-of-project",
+      "name": "Rehab Cost",
+      "valueType": {
+        "type": "number",
+        "minimum": null,
+        "maximum": null,
+        "precision": 2,
+        "style": "dollar"
+      },
+      "condition": {
+        "type": "parent-field-has-value",
+        "parentFieldId": "field@sub-product-category",
+        "value": {
+          "type": "enum",
+          "enumTypeId": "sub-product-category",
+          "variantId": "fix-flip"
+        }
+      }
+    },
+    {
+      "id": "field@rehab-funds",
+      "name": "Rehab Funds Needed",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "yes-no"
+      },
+      "condition": {
+        "type": "parent-field-is-not-blank",
+        "parentFieldId": "field@total-cost-of-project"
+      }
+    },
+    {
+      "id": "field@after-repair-value-arv",
+      "name": "After Repair Value (ARV)",
+      "valueType": {
+        "type": "number",
+        "minimum": null,
+        "maximum": null,
+        "precision": 2,
+        "style": "dollar"
+      },
+      "condition": {
+        "type": "parent-field-is-not-blank",
+        "parentFieldId": "field@total-cost-of-project"
+      }
+    },
+    {
+      "id": "field@attachment-type",
+      "name": "Attachment Type",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "attachment-type"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@documentation-type",
+      "name": "Documentation Type",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "documentation-type"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@prepayment-penalty",
+      "name": "Prepayment Penalty",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "prepayment-penalty"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@state",
+      "name": "State",
+      "valueType": {
+        "type": "string",
+        "format": "us-state-code"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@county",
+      "name": "County",
+      "valueType": {
+        "type": "string",
+        "format": "us-county-code"
+      },
+      "condition": {
+        "type": "parent-field-is-not-blank",
+        "parentFieldId": "field@state"
+      }
+    },
+    {
+      "id": "field@waive-escrows",
+      "name": "Waive Escrows",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "yes-no"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@desired-loan-term",
+      "name": "Desired Loan Term",
+      "valueType": {
+        "type": "duration",
+        "minimumDays": null,
+        "maximumDays": null,
+        "minimumMonths": null,
+        "maximumMonths": null
+      },
+      "condition": null
+    },
+    {
+      "id": "field@desired-mortgage-type",
+      "name": "Desired Mortgage Type",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "mortgage-type"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@desired-mortgage-type-other",
+      "name": "Desired Mortgage Type Other",
+      "valueType": {
+        "type": "string",
+        "format": "plain"
+      },
+      "condition": {
+        "type": "parent-field-has-value",
+        "parentFieldId": "field@desired-mortgage-type",
+        "value": {
+          "type": "enum",
+          "enumTypeId": "mortgage-type",
+          "variantId": "other"
+        }
+      }
+    },
+    {
+      "id": "field@mi-option",
+      "name": "MI Option",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "mi-option"
+      },
+      "condition": {
+        "type": "parent-field-has-value",
+        "parentFieldId": "field@desired-mortgage-type",
+        "value": {
+          "type": "enum",
+          "enumTypeId": "mortgage-type",
+          "variantId": "conventional"
+        }
+      }
+    },
+    {
+      "id": "field@desired-amortization-type",
+      "name": "Desired Amortization Type",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "amortization-type"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@desired-amortization-type-other",
+      "name": "Desired Amortization Type Other",
+      "valueType": {
+        "type": "string",
+        "format": "plain"
+      },
+      "condition": {
+        "type": "parent-field-has-value",
+        "parentFieldId": "field@desired-mortgage-type",
+        "value": {
+          "type": "enum",
+          "enumTypeId": "mortgage-type",
+          "variantId": "other"
+        }
+      }
+    },
+    {
+      "id": "field@desired-rate-lock-period",
+      "name": "Desired Rate Lock Period",
+      "valueType": {
+        "type": "duration",
+        "minimumDays": null,
+        "maximumDays": null,
+        "minimumMonths": null,
+        "maximumMonths": null
+      },
+      "condition": null
+    },
+    {
+      "id": "field@desired-interest-rate",
+      "name": "Desired Interest Rate",
+      "valueType": {
+        "type": "number",
+        "minimum": null,
+        "maximum": null,
+        "precision": 3,
+        "style": "percent"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@desired-community-lending-product",
+      "name": "Desired Community Lending Product",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "community-lending-product-type"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@secondary-financing",
+      "name": "Secondary Financing",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "secondary-financing"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@total-secondary-financing-amount",
+      "name": "Total Secondary Financing Amount",
+      "valueType": {
+        "type": "number",
+        "minimum": "0",
+        "maximum": null,
+        "precision": 2,
+        "style": "dollar"
+      },
+      "condition": {
+        "type": "parent-field-has-value",
+        "parentFieldId": "field@secondary-financing",
+        "value": {
+          "type": "enum",
+          "enumTypeId": "secondary-financing",
+          "variantId": "fixed-second"
+        }
+      }
+    },
+    {
+      "id": "field@heloc-draw-amount",
+      "name": "HELOC Draw Amount",
+      "valueType": {
+        "type": "number",
+        "minimum": null,
+        "maximum": null,
+        "precision": 2,
+        "style": "dollar"
+      },
+      "condition": {
+        "type": "parent-field-has-value",
+        "parentFieldId": "field@secondary-financing",
+        "value": {
+          "type": "enum",
+          "enumTypeId": "secondary-financing",
+          "variantId": "heloc"
+        }
+      }
+    },
+    {
+      "id": "field@heloc-maximum-balance",
+      "name": "HELOC Maximum Balance",
+      "valueType": {
+        "type": "number",
+        "minimum": null,
+        "maximum": null,
+        "precision": 2,
+        "style": "dollar"
+      },
+      "condition": {
+        "type": "parent-field-has-value",
+        "parentFieldId": "field@secondary-financing",
+        "value": {
+          "type": "enum",
+          "enumTypeId": "secondary-financing",
+          "variantId": "heloc"
+        }
+      }
+    },
+    {
+      "id": "field@self-employed",
+      "name": "Self-Employed",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "yes-no"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@total-monthly-income",
+      "name": "Total Monthly Income",
+      "valueType": {
+        "type": "number",
+        "minimum": null,
+        "maximum": null,
+        "precision": 2,
+        "style": "dollar"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@total-liabilities-monthly-payment",
+      "name": "Total Liabilities Monthly Payment",
+      "valueType": {
+        "type": "number",
+        "minimum": null,
+        "maximum": null,
+        "precision": 2,
+        "style": "dollar"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@months-of-reserves",
+      "name": "Months of Reserves",
+      "valueType": {
+        "type": "number",
+        "minimum": null,
+        "maximum": null,
+        "precision": 0,
+        "style": "plain"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@number-mtg-lates-in-last-12-months",
+      "name": "Max Mtg Late",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "mortgage-lates-in-last-12-mos"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@forbearance",
+      "name": "Forbearance",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "forbearance"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@bankruptcy",
+      "name": "Bankruptcy",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "bankruptcy"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@foreclosure",
+      "name": "Foreclosure",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "foreclosure"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@short-sales",
+      "name": "Short Sales",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "short-sales"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@deed-in-lieu",
+      "name": "Deed-in-Lieu",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "deed-in-lieu"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@adverse-accounts",
+      "name": "Adverse Accounts",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "adverse-accounts"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@recent-mortgage-history",
+      "name": "Recent Mortgage History",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "recent-mortgage-history"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@taxes-insurance-hoa",
+      "name": "Taxes/Insurance/HOA",
+      "valueType": {
+        "type": "number",
+        "minimum": null,
+        "maximum": null,
+        "precision": 2,
+        "style": "dollar"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@government-refinance-type",
+      "name": "Government Refinance Type",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "government-refinance-type"
+      },
+      "condition": {
+        "type": "parent-field-has-value",
+        "parentFieldId": "field@loan-purpose",
+        "value": {
+          "type": "enum",
+          "enumTypeId": "loan-purpose",
+          "variantId": "refinance"
+        }
+      }
+    },
+    {
+      "id": "field@government-refinance-type-other-description",
+      "name": "Government Refinance Type Other Description",
+      "valueType": {
+        "type": "string",
+        "format": "plain"
+      },
+      "condition": {
+        "type": "parent-field-has-value",
+        "parentFieldId": "field@government-refinance-type",
+        "value": {
+          "type": "enum",
+          "enumTypeId": "government-refinance-type",
+          "variantId": "other"
+        }
+      }
+    },
+    {
+      "id": "field@fha-refi-endorsement-date-range",
+      "name": "FHA Refi Endorsement Date Range",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "fha-refi-endorsement-date-range"
+      },
+      "condition": {
+        "type": "parent-field-has-value",
+        "parentFieldId": "field@loan-purpose",
+        "value": {
+          "type": "enum",
+          "enumTypeId": "loan-purpose",
+          "variantId": "refinance"
+        }
+      }
+    },
+    {
+      "id": "field@va-first-time-use",
+      "name": "VA First Time Use",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "yes-no"
+      },
+      "condition": {
+        "type": "parent-field-has-value",
+        "parentFieldId": "field@desired-mortgage-type",
+        "value": {
+          "type": "enum",
+          "enumTypeId": "mortgage-type",
+          "variantId": "va"
+        }
+      }
+    },
+    {
+      "id": "field@va-veteran-type",
+      "name": "VA Veteran Type",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "va-veteran-type"
+      },
+      "condition": {
+        "type": "parent-field-has-value",
+        "parentFieldId": "field@desired-mortgage-type",
+        "value": {
+          "type": "enum",
+          "enumTypeId": "mortgage-type",
+          "variantId": "va"
+        }
+      }
+    },
+    {
+      "id": "field@fha-assignment-date-range",
+      "name": "FHA Assignment Date Range",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "fha-assignment-date-range"
+      },
+      "condition": null
+    },
+    {
+      "id": "field@down-payment-percentage",
+      "name": "Down Payment Percentage",
+      "valueType": {
+        "type": "number",
+        "minimum": null,
+        "maximum": null,
+        "precision": 3,
+        "style": "percent"
+      },
+      "condition": {
+        "type": "parent-field-has-value",
+        "parentFieldId": "field@desired-mortgage-type",
+        "value": {
+          "type": "enum",
+          "enumTypeId": "mortgage-type",
+          "variantId": "va"
+        }
+      }
+    }
+  ],
+  "productFields": [
+    {
+      "id": "field@product-category",
+      "name": "Product Category",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "product-category"
+      }
+    },
+    {
+      "id": "field@product-channel",
+      "name": "Product Channel",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "channel"
+      }
+    },
+    {
+      "id": "field@mortgage-type",
+      "name": "Mortgage Type",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "mortgage-type"
+      }
+    },
+    {
+      "id": "field@mortgage-type-other-description",
+      "name": "Mortgage Type Other Description",
+      "valueType": {
+        "type": "string",
+        "format": "plain"
+      }
+    },
+    {
+      "id": "field@loan-term-type",
+      "name": "Loan Term Type",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "loan-term-type"
+      }
+    },
+    {
+      "id": "field@preset-loan-term",
+      "name": "Preset Loan Term",
+      "valueType": {
+        "type": "duration",
+        "minimumDays": null,
+        "maximumDays": null,
+        "minimumMonths": null,
+        "maximumMonths": null
+      }
+    },
+    {
+      "id": "field@minimum-loan-term",
+      "name": "Minimum Loan Term",
+      "valueType": {
+        "type": "duration",
+        "minimumDays": null,
+        "maximumDays": null,
+        "minimumMonths": null,
+        "maximumMonths": null
+      }
+    },
+    {
+      "id": "field@maximum-loan-term",
+      "name": "Maximum Loan Term",
+      "valueType": {
+        "type": "duration",
+        "minimumDays": null,
+        "maximumDays": null,
+        "minimumMonths": null,
+        "maximumMonths": null
+      }
+    },
+    {
+      "id": "field@preset-loan-maturity",
+      "name": "Preset Loan Maturity",
+      "valueType": {
+        "type": "duration",
+        "minimumDays": "1",
+        "maximumDays": null,
+        "minimumMonths": "0.5",
+        "maximumMonths": null
+      }
+    },
+    {
+      "id": "field@minimum-loan-maturity",
+      "name": "Minimum Loan Maturity",
+      "valueType": {
+        "type": "duration",
+        "minimumDays": null,
+        "maximumDays": null,
+        "minimumMonths": null,
+        "maximumMonths": null
+      }
+    },
+    {
+      "id": "field@maximum-loan-maturity",
+      "name": "Maximum Loan Maturity",
+      "valueType": {
+        "type": "duration",
+        "minimumDays": null,
+        "maximumDays": null,
+        "minimumMonths": null,
+        "maximumMonths": null
+      }
+    },
+    {
+      "id": "field@payment-interval",
+      "name": "Payment Interval",
+      "valueType": {
+        "type": "duration",
+        "minimumDays": "0",
+        "maximumDays": null,
+        "minimumMonths": "0",
+        "maximumMonths": null
+      }
+    },
+    {
+      "id": "field@amortization-type",
+      "name": "Amortization Type",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "amortization-type"
+      }
+    },
+    {
+      "id": "field@amortization-type-other-description",
+      "name": "Amortization Type Other Description",
+      "valueType": {
+        "type": "string",
+        "format": "plain"
+      }
+    },
+    {
+      "id": "field@interest-only",
+      "name": "Interest Only Period?",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "interest-only-period"
+      }
+    },
+    {
+      "id": "field@i-o-term",
+      "name": "I/O Term",
+      "valueType": {
+        "type": "duration",
+        "minimumDays": null,
+        "maximumDays": null,
+        "minimumMonths": null,
+        "maximumMonths": null
+      }
+    },
+    {
+      "id": "field@lien-priority",
+      "name": "Lien Priority",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "lien-priority"
+      }
+    },
+    {
+      "id": "field@lien-priority-other-description",
+      "name": "Lien Priority Other Description",
+      "valueType": {
+        "type": "string",
+        "format": "plain"
+      }
+    },
+    {
+      "id": "field@max-price-limit",
+      "name": "Max Price Limit",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "yes-no"
+      }
+    },
+    {
+      "id": "field@max-price",
+      "name": "Max Price",
+      "valueType": {
+        "type": "number",
+        "minimum": null,
+        "maximum": null,
+        "precision": 3,
+        "style": "plain"
+      }
+    },
+    {
+      "id": "field@index-type",
+      "name": "Index Type",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "index-type"
+      }
+    },
+    {
+      "id": "field@index-type-other-description",
+      "name": "Index Type Other Description",
+      "valueType": {
+        "type": "string",
+        "format": "plain"
+      }
+    },
+    {
+      "id": "field@first-rate-change-months-count",
+      "name": "First Rate Change Months Count",
+      "valueType": {
+        "type": "duration",
+        "minimumDays": null,
+        "maximumDays": null,
+        "minimumMonths": null,
+        "maximumMonths": null
+      }
+    },
+    {
+      "id": "field@subsequent-rate-change-months-count",
+      "name": "Subsequent Rate Change Months Count",
+      "valueType": {
+        "type": "duration",
+        "minimumDays": null,
+        "maximumDays": null,
+        "minimumMonths": null,
+        "maximumMonths": null
+      }
+    },
+    {
+      "id": "field@first-max-increase-rate-percent",
+      "name": "First Max Increase Rate Percent",
+      "valueType": {
+        "type": "number",
+        "minimum": "0",
+        "maximum": null,
+        "precision": 3,
+        "style": "percent"
+      }
+    },
+    {
+      "id": "field@subsequent-max-increase-rate-percent",
+      "name": "Subsequent Max Increase Rate Percent",
+      "valueType": {
+        "type": "number",
+        "minimum": "0",
+        "maximum": null,
+        "precision": 3,
+        "style": "percent"
+      }
+    },
+    {
+      "id": "field@maximum-increase-rate-percent",
+      "name": "Maximum Increase Rate Percent",
+      "valueType": {
+        "type": "number",
+        "minimum": "0",
+        "maximum": null,
+        "precision": 3,
+        "style": "percent"
+      }
+    },
+    {
+      "id": "field@floor-rate-percent",
+      "name": "Floor Rate Percent",
+      "valueType": {
+        "type": "number",
+        "minimum": null,
+        "maximum": null,
+        "precision": 3,
+        "style": "percent"
+      }
+    },
+    {
+      "id": "field@margin-rate-percent",
+      "name": "Margin Rate Percent",
+      "valueType": {
+        "type": "number",
+        "minimum": null,
+        "maximum": null,
+        "precision": 3,
+        "style": "percent"
+      }
+    },
+    {
+      "id": "field@community-lending-product-type",
+      "name": "Community Lending Product Type",
+      "valueType": {
+        "type": "enum",
+        "enumTypeId": "community-lending-product-type"
+      }
+    }
+  ],
+  "enumerations": [
+    {
+      "id": "mortgage-lates-in-last-12-mos",
+      "name": "Max Mtg Late",
+      "variants": [
+        {
+          "id": "0-x-30",
+          "name": "0 x 30 x 12 months"
+        },
+        {
+          "id": "1-x-30",
+          "name": "1 x 30 x 12 months"
+        },
+        {
+          "id": "2-x-30",
+          "name": "2+ x 30 x 12 months"
+        },
+        {
+          "id": "1-x-60",
+          "name": "1 x 60 x 12 months"
+        },
+        {
+          "id": "1-x-90",
+          "name": "1 x 90 x 12 months"
+        },
+        {
+          "id": "0-x-30-x-24-months",
+          "name": "0 x 30 x 24 months"
+        }
+      ]
+    },
+    {
+      "id": "fha-assignment-date-range",
+      "name": "FHA Assignment Date Range",
+      "variants": [
+        {
+          "id": "1-26-2015-today-16-30-yr",
+          "name": "1/26/2015-Today (16-30YR)"
+        },
+        {
+          "id": "6-3-2013-today-0-15-yr",
+          "name": "6/3/2013-Today (0-15YR)"
+        },
+        {
+          "id": "6-3-2013-today-refi-only-16-30-yr",
+          "name": "6/3/2013-Today (Refi Only 16-30YR)"
+        },
+        {
+          "id": "6-3-2013-1-25-2015",
+          "name": "6/3/2013-1/25/2015"
+        },
+        {
+          "id": "4-1-2013-6-2-2013",
+          "name": "4/1/2013-6/2/2013"
+        },
+        {
+          "id": "6-11-2012-6-2-2013",
+          "name": "6/11/2012-6/2/2013"
+        },
+        {
+          "id": "6-11-2012-3-31-2013",
+          "name": "6/11/2012-3/31/2013"
+        },
+        {
+          "id": "4-9-2012-6-10-2012",
+          "name": "4/9/2012-6/10/2012"
+        },
+        {
+          "id": "4-18-2011-4-8-2012",
+          "name": "4/18/2011-4/8/2012"
+        },
+        {
+          "id": "10-4-2010-4-17-2011",
+          "name": "10/4/2010-4/17/2011"
+        },
+        {
+          "id": "4-5-2010-10-3-2010",
+          "name": "4/5/2010-10/3/2010"
+        },
+        {
+          "id": "10-1-2008-4-4-2010",
+          "name": "10/1/2008-4/4/2010"
+        }
+      ]
+    },
+    {
+      "id": "fha-refi-endorsement-date-range",
+      "name": "FHA Refi Endorsement Date Range",
+      "variants": [
+        {
+          "id": "after-5-31-2009",
+          "name": "After 5/31/2009"
+        },
+        {
+          "id": "on-or-before-5-31-2009",
+          "name": "On or Before 5/31/2009"
+        }
+      ]
+    },
+    {
+      "id": "government-refinance-type",
+      "name": "Government Refinance Type",
+      "variants": [
+        {
+          "id": "cash-out-va",
+          "name": "CashOutVA"
+        },
+        {
+          "id": "full-documentation",
+          "name": "FullDocumentation"
+        },
+        {
+          "id": "interest-rate-reduction-refinance-loan",
+          "name": "InterestRateReductionRefinanceLoan"
+        },
+        {
+          "id": "none",
+          "name": "None"
+        },
+        {
+          "id": "other",
+          "name": "Other"
+        },
+        {
+          "id": "simple-refinance",
+          "name": "SimpleRefinance"
+        },
+        {
+          "id": "streamline-with-appraisal",
+          "name": "StreamlineWithAppraisal"
+        },
+        {
+          "id": "streamline-without-appraisal",
+          "name": "StreamlineWithoutAppraisal"
+        }
+      ]
+    },
+    {
+      "id": "va-veteran-type",
+      "name": "VA Veteran Type",
+      "variants": [
+        {
+          "id": "national-guard",
+          "name": "National Guard"
+        },
+        {
+          "id": "regular-military",
+          "name": "Regular Military"
+        },
+        {
+          "id": "reserves",
+          "name": "Reserves"
+        }
+      ]
+    },
+    {
+      "id": "community-lending-product-type",
+      "name": "Community Lending Product Type",
+      "variants": [
+        {
+          "id": "fhlmc-home-one",
+          "name": "FHLMC HomeOne"
+        },
+        {
+          "id": "fhlmc-home-possible",
+          "name": "FHLMC HomePossible"
+        },
+        {
+          "id": "fnma-high-ltv-refinance",
+          "name": "FNMA High LTV Refinance"
+        },
+        {
+          "id": "fnma-home-ready",
+          "name": "FNMA HomeReady"
+        },
+        {
+          "id": "fnma-home-style",
+          "name": "FNMA HomeStyle"
+        },
+        {
+          "id": "none",
+          "name": "None"
+        }
+      ]
+    },
+    {
+      "id": "condo-type",
+      "name": "Condo Type",
+      "variants": [
+        {
+          "id": "low-rise-1-3-stories",
+          "name": "Low Rise (1-3 stories)"
+        },
+        {
+          "id": "mid-rise-4-8-stories",
+          "name": "Mid Rise (4-8 stories)"
+        },
+        {
+          "id": "high-rise-9-stories",
+          "name": "High Rise (9+ stories)"
+        }
+      ]
+    },
+    {
+      "id": "mi-option",
+      "name": "MI Option",
+      "variants": [
+        {
+          "id": "borrower-paid",
+          "name": "Borrower Paid"
+        },
+        {
+          "id": "lender-paid",
+          "name": "Lender Paid"
+        },
+        {
+          "id": "mi-not-required",
+          "name": "MI Not Required"
+        },
+        {
+          "id": "split-mi",
+          "name": "Split MI"
+        },
+        {
+          "id": "single-finance-mi",
+          "name": "Single Finance MI"
+        }
+      ]
+    },
+    {
+      "id": "adverse-accounts",
+      "name": "Adverse Accounts",
+      "variants": [
+        {
+          "id": "not-applicable",
+          "name": "Not Applicable"
+        },
+        {
+          "id": "0-23-months-ago",
+          "name": "0-23 Months Ago"
+        },
+        {
+          "id": "24-months-ago",
+          "name": "24+ Months Ago"
+        }
+      ]
+    },
+    {
+      "id": "product-category",
+      "name": "Product Category",
+      "variants": [
+        {
+          "id": "alternative-mortgage",
+          "name": "Alternative Mortgage"
+        },
+        {
+          "id": "bridge",
+          "name": "Bridge"
+        },
+        {
+          "id": "government",
+          "name": "Government"
+        },
+        {
+          "id": "jumbo",
+          "name": "Jumbo"
+        },
+        {
+          "id": "mortgage",
+          "name": "Mortgage"
+        },
+        {
+          "id": "rental",
+          "name": "Rental"
+        }
+      ]
+    },
+    {
+      "id": "recent-mortgage-history",
+      "name": "Recent Mortgage History",
+      "variants": [
+        {
+          "id": "not-applicable",
+          "name": "Not Applicable"
+        },
+        {
+          "id": "no-mortgage-history-within-the-last-120-days",
+          "name": "No mortgage history within the last 120 days"
+        },
+        {
+          "id": "no-mortgage-history-for-longer-than-120-days",
+          "name": "No mortgage history for longer than 120 days"
+        }
+      ]
+    },
+    {
+      "id": "sub-product-category",
+      "name": "Sub-Product Category",
+      "variants": [
+        {
+          "id": "stabilized-bridge",
+          "name": "Stabilized Bridge"
+        },
+        {
+          "id": "fix-flip",
+          "name": "Fix & Flip"
+        }
+      ]
+    },
+    {
+      "id": "occupancy-type",
+      "name": "Occupancy Type",
+      "variants": [
+        {
+          "id": "investment",
+          "name": "Investment"
+        },
+        {
+          "id": "primary-residence",
+          "name": "Primary Residence"
+        },
+        {
+          "id": "second-home",
+          "name": "Second Home"
+        }
+      ]
+    },
+    {
+      "id": "deed-in-lieu",
+      "name": "Deed-in-Lieu",
+      "variants": [
+        {
+          "id": "not-applicable",
+          "name": "Not Applicable"
+        },
+        {
+          "id": "settled-within-last-year",
+          "name": "Settled 0-11 Months Ago"
+        },
+        {
+          "id": "settled-1-2-years-ago",
+          "name": "Settled 12-23 Months Ago"
+        },
+        {
+          "id": "settled-2-years-ago",
+          "name": "Settled 24-59 Months Ago"
+        },
+        {
+          "id": "settled-60-months-ago",
+          "name": "Settled 60+ Months Ago"
+        }
+      ]
+    },
+    {
+      "id": "index-type",
+      "name": "Index Type",
+      "variants": [
+        {
+          "id": "bank-prime-loan",
+          "name": "Bank Prime Loan"
+        },
+        {
+          "id": "certificate-of-deposit-index",
+          "name": "Certificate of Deposit Index"
+        },
+        {
+          "id": "constant-maturity-treasury",
+          "name": "Constant Maturity Treasury"
+        },
+        {
+          "id": "cost-of-savings-index",
+          "name": "Cost Of Savings Index"
+        },
+        {
+          "id": "eleventh-district-cost-of-funds-index",
+          "name": "Eleventh District Cost Of Funds Index"
+        },
+        {
+          "id": "libor",
+          "name": "LIBOR"
+        },
+        {
+          "id": "other",
+          "name": "Other"
+        },
+        {
+          "id": "sofr",
+          "name": "SOFR"
+        },
+        {
+          "id": "treasury-bill",
+          "name": "Treasury Bill"
+        },
+        {
+          "id": "twelve-month-treasury-average",
+          "name": "Twelve Month Treasury Average"
+        }
+      ]
+    },
+    {
+      "id": "secondary-financing",
+      "name": "Secondary Financing",
+      "variants": [
+        {
+          "id": "none",
+          "name": "None"
+        },
+        {
+          "id": "fixed-second",
+          "name": "Fixed Second"
+        },
+        {
+          "id": "heloc",
+          "name": "HELOC"
+        }
+      ]
+    },
+    {
+      "id": "yes-no",
+      "name": "Yes/No",
+      "variants": [
+        {
+          "id": "no",
+          "name": "No"
+        },
+        {
+          "id": "yes",
+          "name": "Yes"
+        }
+      ]
+    },
+    {
+      "id": "wholesale-compensation",
+      "name": "Wholesale Compensation",
+      "variants": [
+        {
+          "id": "borrower-paid",
+          "name": "Borrower Paid"
+        },
+        {
+          "id": "lender-paid",
+          "name": "Lender Paid"
+        }
+      ]
+    },
+    {
+      "id": "loan-term-type",
+      "name": "Loan Term Type",
+      "variants": [
+        {
+          "id": "preset",
+          "name": "Preset"
+        },
+        {
+          "id": "range",
+          "name": "Range"
+        }
+      ]
+    },
+    {
+      "id": "interest-only-period",
+      "name": "Interest Only Period?",
+      "variants": [
+        {
+          "id": "no",
+          "name": "No"
+        },
+        {
+          "id": "yes",
+          "name": "Yes"
+        }
+      ]
+    },
+    {
+      "id": "borrower-type",
+      "name": "Borrower Type",
+      "variants": [
+        {
+          "id": "us-citizen",
+          "name": "US Citizen"
+        },
+        {
+          "id": "perm-res-alien",
+          "name": "Perm Res Alien"
+        },
+        {
+          "id": "non-perm-res-alien",
+          "name": "Non-Perm Res Alien"
+        },
+        {
+          "id": "foreign-nationals",
+          "name": "Foreign National"
+        },
+        {
+          "id": "itin",
+          "name": "ITIN"
+        },
+        {
+          "id": "business-llc",
+          "name": "Business LLC"
+        }
+      ]
+    },
+    {
+      "id": "channel",
+      "name": "Channel",
+      "variants": [
+        {
+          "id": "correspondent",
+          "name": "Correspondent"
+        },
+        {
+          "id": "wholesale",
+          "name": "Wholesale"
+        }
+      ]
+    },
+    {
+      "id": "bankruptcy",
+      "name": "Bankruptcy",
+      "variants": [
+        {
+          "id": "not-applicable",
+          "name": "Not Applicable"
+        },
+        {
+          "id": "0-11-months-ago",
+          "name": "0-11 Months Ago"
+        },
+        {
+          "id": "less-than-2-years-ago",
+          "name": "12-23 Months Ago"
+        },
+        {
+          "id": "2-3-years-ago",
+          "name": "24-35 Months Ago"
+        },
+        {
+          "id": "3-years-ago",
+          "name": "36-59 Months Ago"
+        },
+        {
+          "id": "60-months-ago",
+          "name": "60+ Months Ago"
+        }
+      ]
+    },
+    {
+      "id": "prepayment-penalty",
+      "name": "Prepayment Penalty",
+      "variants": [
+        {
+          "id": "buy-out-prepay",
+          "name": "Buy Out Prepay"
+        },
+        {
+          "id": "1-year-prepay",
+          "name": "1 Year Prepay"
+        },
+        {
+          "id": "2-year-prepay",
+          "name": "2 Year Prepay"
+        },
+        {
+          "id": "3-year-prepay",
+          "name": "3 Year Prepay"
+        },
+        {
+          "id": "4-year-prepay",
+          "name": "4 Year Prepay"
+        },
+        {
+          "id": "5-year-prepay",
+          "name": "5 Year Prepay"
+        }
+      ]
+    },
+    {
+      "id": "refinance-type",
+      "name": "Refinance Type",
+      "variants": [
+        {
+          "id": "cash-out",
+          "name": "Cash Out"
+        },
+        {
+          "id": "limited-cash-out",
+          "name": "Limited Cash Out"
+        },
+        {
+          "id": "no-cash-out",
+          "name": "No Cash Out"
+        }
+      ]
+    },
+    {
+      "id": "loan-purpose",
+      "name": "Loan Purpose",
+      "variants": [
+        {
+          "id": "purchase",
+          "name": "Purchase"
+        },
+        {
+          "id": "refinance",
+          "name": "Refinance"
+        },
+        {
+          "id": "assumption",
+          "name": "Assumption"
+        },
+        {
+          "id": "mortgage-modification",
+          "name": "Mortgage Modification"
+        }
+      ]
+    },
+    {
+      "id": "lender-comp-percent",
+      "name": "Lender Comp Percent",
+      "variants": [
+        {
+          "id": "0-000",
+          "name": "0.000"
+        },
+        {
+          "id": "0-125",
+          "name": "0.125"
+        },
+        {
+          "id": "0-250",
+          "name": "0.250"
+        },
+        {
+          "id": "0-375",
+          "name": "0.375"
+        },
+        {
+          "id": "0-500",
+          "name": "0.500"
+        },
+        {
+          "id": "0-625",
+          "name": "0.625"
+        },
+        {
+          "id": "0-750",
+          "name": "0.750"
+        },
+        {
+          "id": "0-875",
+          "name": "0.875"
+        },
+        {
+          "id": "1-000",
+          "name": "1.000"
+        },
+        {
+          "id": "1-125",
+          "name": "1.125"
+        },
+        {
+          "id": "1-250",
+          "name": "1.250"
+        },
+        {
+          "id": "1-375",
+          "name": "1.375"
+        },
+        {
+          "id": "1-500",
+          "name": "1.500"
+        },
+        {
+          "id": "1-625",
+          "name": "1.625"
+        },
+        {
+          "id": "1-750",
+          "name": "1.750"
+        },
+        {
+          "id": "1-875",
+          "name": "1.875"
+        },
+        {
+          "id": "2-000",
+          "name": "2.000"
+        },
+        {
+          "id": "2-125",
+          "name": "2.125"
+        },
+        {
+          "id": "2-250",
+          "name": "2.250"
+        },
+        {
+          "id": "2-375",
+          "name": "2.375"
+        },
+        {
+          "id": "2-500",
+          "name": "2.500"
+        },
+        {
+          "id": "2-625",
+          "name": "2.625"
+        },
+        {
+          "id": "2-750",
+          "name": "2.750"
+        },
+        {
+          "id": "2-875",
+          "name": "2.875"
+        },
+        {
+          "id": "3-000",
+          "name": "3.000"
+        }
+      ]
+    },
+    {
+      "id": "forbearance",
+      "name": "Forbearance",
+      "variants": [
+        {
+          "id": "not-applicable",
+          "name": "Not Applicable"
+        },
+        {
+          "id": "within-last-90-days",
+          "name": "0-3 Months Ago"
+        },
+        {
+          "id": "within-last-180-days",
+          "name": "4-6 Months Ago"
+        },
+        {
+          "id": "7-18-months-ago",
+          "name": "7-18 Months Ago"
+        },
+        {
+          "id": "18-months-ago",
+          "name": "18+ Months Ago"
+        }
+      ]
+    },
+    {
+      "id": "documentation-type",
+      "name": "Documentation Type",
+      "variants": [
+        {
+          "id": "full-documentation",
+          "name": "Full Documentation"
+        },
+        {
+          "id": "alt-doc-bank-statements",
+          "name": "12 Month Bank Statements"
+        },
+        {
+          "id": "3-month-bank-statement",
+          "name": "3 Month Bank Statements - Personal"
+        },
+        {
+          "id": "3-month-bank-statements-business",
+          "name": "3 Month Bank Statements - Business"
+        },
+        {
+          "id": "self-prepared-profit-loss",
+          "name": "Self Prepared Profit & Loss"
+        },
+        {
+          "id": "voe",
+          "name": "VOE"
+        },
+        {
+          "id": "asset-depletion",
+          "name": "Asset Depletion"
+        },
+        {
+          "id": "atr-in-full",
+          "name": "ATR-in-Full"
+        },
+        {
+          "id": "dscr",
+          "name": "DSCR"
+        }
+      ]
+    },
+    {
+      "id": "interest-rate-rounding-type",
+      "name": "Interest Rate Rounding Type",
+      "variants": [
+        {
+          "id": "down",
+          "name": "Down"
+        },
+        {
+          "id": "nearest",
+          "name": "Nearest"
+        },
+        {
+          "id": "no-rounding",
+          "name": "No Rounding"
+        },
+        {
+          "id": "up",
+          "name": "Up"
+        }
+      ]
+    },
+    {
+      "id": "foreclosure",
+      "name": "Foreclosure",
+      "variants": [
+        {
+          "id": "not-applicable",
+          "name": "Not Applicable"
+        },
+        {
+          "id": "0-11-months-ago",
+          "name": "0-11 Months Ago"
+        },
+        {
+          "id": "less-than-2-years-ago",
+          "name": "12-23 Months Ago"
+        },
+        {
+          "id": "2-3-years-ago",
+          "name": "24-35 Months Ago"
+        },
+        {
+          "id": "3-years-ago",
+          "name": "36-59 Months Ago"
+        },
+        {
+          "id": "60-months-ago",
+          "name": "60+ Months Ago"
+        }
+      ]
+    },
+    {
+      "id": "attachment-type",
+      "name": "Attachment Type",
+      "variants": [
+        {
+          "id": "attached",
+          "name": "Attached"
+        },
+        {
+          "id": "detached",
+          "name": "Detached"
+        },
+        {
+          "id": "semi-detached",
+          "name": "SemiDetached"
+        }
+      ]
+    },
+    {
+      "id": "short-sales",
+      "name": "Short Sales",
+      "variants": [
+        {
+          "id": "not-applicable",
+          "name": "Not Applicable"
+        },
+        {
+          "id": "settled-within-last-year",
+          "name": "Settled 0-11 Months Ago"
+        },
+        {
+          "id": "settled-1-2-years-ago",
+          "name": "Settled 12-23 Months Ago"
+        },
+        {
+          "id": "settled-2-years-ago",
+          "name": "Settled 24-59 Months Ago"
+        },
+        {
+          "id": "settled-60-months-ago",
+          "name": "Settled 60+ Months Ago"
+        }
+      ]
+    },
+    {
+      "id": "mortgage-type",
+      "name": "Mortgage Type",
+      "variants": [
+        {
+          "id": "conventional",
+          "name": "Conventional"
+        },
+        {
+          "id": "fha",
+          "name": "FHA"
+        },
+        {
+          "id": "local-agency",
+          "name": "Local Agency"
+        },
+        {
+          "id": "other",
+          "name": "Other"
+        },
+        {
+          "id": "public-and-indian-housing",
+          "name": "Public and Indian Housing"
+        },
+        {
+          "id": "state-agency",
+          "name": "State Agency"
+        },
+        {
+          "id": "usda-rural-development",
+          "name": "USDA Rural Development"
+        },
+        {
+          "id": "va",
+          "name": "VA"
+        }
+      ]
+    },
+    {
+      "id": "amortization-type",
+      "name": "Amortization Type",
+      "variants": [
+        {
+          "id": "adjustable-rate",
+          "name": "Adjustable Rate"
+        },
+        {
+          "id": "fixed",
+          "name": "Fixed"
+        },
+        {
+          "id": "gem",
+          "name": "GEM"
+        },
+        {
+          "id": "gpm",
+          "name": "GPM"
+        },
+        {
+          "id": "graduated-payment-arm",
+          "name": "Graduated Payment ARM"
+        },
+        {
+          "id": "other",
+          "name": "Other"
+        },
+        {
+          "id": "rate-improvement-mortgage",
+          "name": "Rate Improvement Mortgage"
+        },
+        {
+          "id": "step",
+          "name": "Step"
+        }
+      ]
+    },
+    {
+      "id": "property-type",
+      "name": "Property Type",
+      "variants": [
+        {
+          "id": "adult-care-facility",
+          "name": "Adult Care Facility"
+        },
+        {
+          "id": "condominium",
+          "name": "Condominium"
+        },
+        {
+          "id": "condotel-pu-dtel",
+          "name": "Condotel/PUDtel"
+        },
+        {
+          "id": "cooperative",
+          "name": "Cooperative"
+        },
+        {
+          "id": "manufactured-home",
+          "name": "Manufactured Home"
+        },
+        {
+          "id": "non-warranted-condominium",
+          "name": "Non-Warranted Condominium"
+        },
+        {
+          "id": "other",
+          "name": "Other"
+        },
+        {
+          "id": "pud",
+          "name": "PUD"
+        },
+        {
+          "id": "rural",
+          "name": "Rural"
+        },
+        {
+          "id": "single-family",
+          "name": "Single Family"
+        },
+        {
+          "id": "townhouse",
+          "name": "Townhouse"
+        },
+        {
+          "id": "two-to-four-family",
+          "name": "Two to Four Family"
+        },
+        {
+          "id": "short-term-rental",
+          "name": "Short Term Rental"
+        }
+      ]
+    },
+    {
+      "id": "lien-priority",
+      "name": "Lien Priority",
+      "variants": [
+        {
+          "id": "first",
+          "name": "First"
+        },
+        {
+          "id": "fourth",
+          "name": "Fourth"
+        },
+        {
+          "id": "other",
+          "name": "Other"
+        },
+        {
+          "id": "second",
+          "name": "Second"
+        },
+        {
+          "id": "third",
+          "name": "Third"
+        }
+      ]
+    }
+  ]
+}

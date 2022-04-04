@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "TypeGenerator": {
+      "commandName": "Project",
+      "commandLineArgs": "-i \"Samples\\config_response.json\" -l cs -t field enum"
+    }
+  }
+}

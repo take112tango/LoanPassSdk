@@ -1,0 +1,120 @@
+{
+  "productId": "3679",
+  "currentTime": "2021-05-03T23:43:59.355Z",
+  "creditApplicationFields": [
+    {
+      "fieldId": "field@loan-purpose",
+      "value":
+      {
+        "type": "enum",
+        "enumTypeId": "loan-purpose",
+        "variantId": "refinance"
+      }
+    },
+    {
+      "fieldId": "field@refinance-type",
+      "value":
+      {
+        "type": "enum",
+        "enumTypeId": "refinance-type",
+        "variantId": "cash-out"
+      }
+    },
+    {
+      "fieldId": "field@borrower-type",
+      "value":
+      {
+        "type": "enum",
+        "enumTypeId": "borrower-type",
+        "variantId": "us-citizen"
+      }
+    },
+    {
+      "fieldId": "field@occupancy-type",
+      "value":
+      {
+        "type": "enum",
+        "enumTypeId": "occupancy-type",
+        "variantId": "primary-residence"
+      }
+    },
+    {
+      "fieldId": "field@property-type",
+      "value":
+      {
+        "type": "enum",
+        "enumTypeId": "property-type",
+        "variantId": "single-family"
+      }
+    },
+    {
+      "fieldId": "field@number-of-units",
+      "value":
+      {
+        "type": "number",
+        "value": 1
+      }
+    },
+    {
+      "fieldId": "field@decision-credit-score",
+      "value":
+      {
+        "type": "number",
+        "value": 777
+      }
+    },
+    {
+      "fieldId": "field@base-loan-amount",
+      "value":
+      {
+        "type": "number",
+        "value": 500000
+      }
+    },
+    {
+      "fieldId": "field@appraised-value",
+      "value":
+      {
+        "type": "number",
+        "value": 750000
+      }
+    },
+    {
+      "fieldId": "field@documentation-type",
+      "value":
+      {
+        "type": "enum",
+        "enumTypeId": "documentation-type",
+        "variantId": "3-month-bank-statements-business"
+      }
+    },
+    {
+      "fieldId": "field@prepayment-penalty",
+      "value":
+      {
+        "type": "enum",
+        "enumTypeId": "prepayment-penalty",
+        "variantId": "3-year-prepay"
+      }
+    },
+    {
+      "fieldId": "field@state",
+      "value":
+      {
+        "type": "string",
+        "value": "CA"
+      }
+    },
+    {
+      "fieldId": "field@number-mtg-lates-in-last-12-months",
+      "value":
+      {
+        "type": "enum",
+        "enumTypeId": "number-mtg-lates-in-last-12-months",
+        "variantId": "0-x-30-x-24-months"
+      }
+    }
+
+  ]
+
+}

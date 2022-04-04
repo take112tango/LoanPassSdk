@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoanPassSdk", "LoanPassSdk\LoanPassSdk.csproj", "{89AFFF77-536C-4FC2-B741-171FAEA4CD9B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoanPassSdkTests", "LoanPassSdkTests\LoanPassSdkTests.csproj", "{643C6652-0FAE-4F57-AD86-5FEDB034D76B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D2234D2F-FEAA-41F3-A60A-565140901622}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{9AA78BDE-721B-46A6-8B82-632E1E3926A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeGenerator", "TypeGenerator\TypeGenerator.csproj", "{9945485A-3382-4F37-B70A-BF55DD1C54B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TypeGeneratorTests", "TypeGeneratorTests\TypeGeneratorTests.csproj", "{83E2CBDC-194D-41E4-989F-CF28D9EBCF7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{B92D7DCD-7AA3-433C-B83C-91B3E372948F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89AFFF77-536C-4FC2-B741-171FAEA4CD9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89AFFF77-536C-4FC2-B741-171FAEA4CD9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89AFFF77-536C-4FC2-B741-171FAEA4CD9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89AFFF77-536C-4FC2-B741-171FAEA4CD9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{643C6652-0FAE-4F57-AD86-5FEDB034D76B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{643C6652-0FAE-4F57-AD86-5FEDB034D76B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{643C6652-0FAE-4F57-AD86-5FEDB034D76B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{643C6652-0FAE-4F57-AD86-5FEDB034D76B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9945485A-3382-4F37-B70A-BF55DD1C54B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9945485A-3382-4F37-B70A-BF55DD1C54B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9945485A-3382-4F37-B70A-BF55DD1C54B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9945485A-3382-4F37-B70A-BF55DD1C54B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{83E2CBDC-194D-41E4-989F-CF28D9EBCF7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83E2CBDC-194D-41E4-989F-CF28D9EBCF7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83E2CBDC-194D-41E4-989F-CF28D9EBCF7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83E2CBDC-194D-41E4-989F-CF28D9EBCF7F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{643C6652-0FAE-4F57-AD86-5FEDB034D76B} = {D2234D2F-FEAA-41F3-A60A-565140901622}
+		{9945485A-3382-4F37-B70A-BF55DD1C54B1} = {9AA78BDE-721B-46A6-8B82-632E1E3926A1}
+		{83E2CBDC-194D-41E4-989F-CF28D9EBCF7F} = {B92D7DCD-7AA3-433C-B83C-91B3E372948F}
+		{B92D7DCD-7AA3-433C-B83C-91B3E372948F} = {D2234D2F-FEAA-41F3-A60A-565140901622}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3782760E-61AB-45CB-ADD2-B8AA80F764AE}
+	EndGlobalSection
+EndGlobal
