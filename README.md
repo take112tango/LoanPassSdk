@@ -22,6 +22,7 @@ Currently supported languages:
 - GraphQL (aka gql)
 
 ### Getting started
+The sample [config_response.json](.\TypeGenerator\Samples\config_response.json) used for demonstration and unit testing. 
 ```
 USAGE:
 Generate types for all in C#:
@@ -47,7 +48,7 @@ Generate types for Enum only in GraphQL:
 
   --version         Display version information.
 ```
-#### Generate KnownEnumId.cs
+#### Generate [KnownEnumId.cs](.\LoanPassSdk\Generated\KnownFieldId.cs)
 ```
 ./Take112Tango.Libs.LoanPassSdk.TypeGenerator.exe -i "Samples\config_response.json" -l cs -t enum
 ```
@@ -121,11 +122,11 @@ enum LOAN_PURPOSE {
 
 ## C# LoanPass SDK
 SDK for C# is part of this project. **Prior to embedding the SDK into clients' code, TypeGenerator needs to be run 
-to update ```KnownEnumId.cs``` and ```KnownFieldId.cs``` of the SDK with the latest result of LoanPass' API (/configuration).**
+to update [KnownEnumId.cs](.\LoanPassSdk\Generated\KnownFieldId.cs) and [KnownFieldId.cs](.\LoanPassSdk\Generated\KnownFieldId.cs) of the SDK project with the latest result of LoanPass' API (/configuration).**
 Please see the [Loanpass SDK Architecture](docs/LoanpassSDK.png).
 
 ### Getting started
-The ```FieldsBuilder``` in the sample code below builds and validates individual fields of the request using strong typed FieldIds and EnumIds generated 
+The [FieldsBuilder](.\LoanPassSdk\Builders\ExecSummaryRequestBuilder.cs) in the sample code below builds and validates individual fields of the request using strong typed FieldIds and EnumIds generated 
 by TypeGenerator.
 
 ```C#
@@ -164,7 +165,7 @@ var productRequest = ExecSummaryRequest.Builder()
                 .WithFields(fields)
                 .Build();
                 
-var productResult = await client.ExecProductAsync(summaryRequest);
+var productResult = await client.ExecProductAsync(productRequest);
 ```
 
 
