@@ -160,9 +160,10 @@ var productFields = ExecProductRequest.FieldsBuilder()
                 .FieldDuration(KnownFieldId.DESIRED_LOAN_TERM, 30, DurationUnit.Years)
                 .Build();
 
-var productRequest = ExecSummaryRequest.Builder()
+var productRequest = ExecProductRequest.Builder()
                 .WithTime(DateTime.Now)
                 .WithFields(fields)
+                .WithProdId("some product id")
                 .Build();
                 
 var productResult = await client.ExecProductAsync(productRequest);
