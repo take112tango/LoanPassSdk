@@ -13,9 +13,9 @@ The project here consists of 2 components:
 
 ## TypeGenerator
 TypeGenerator is a command line tool developed in C# .NET 5. Using the result of LoanPass' API (/configuration), TypeGenerator generates 
-strong types code containing all the well known **FieldIds** and **EnumIds** of pricing rules.
+strong typed code containing all the well known **FieldIds** and **EnumIds** of pricing rules.
 
-TypeGenerator was designed to generate strong types of **FieldIds** and **EnumIds** in multiple languages via plug-in(s).
+TypeGenerator was designed to generate strong typed **FieldIds** and **EnumIds** in multiple languages via plug-in(s).
 Currently supported languages:
 - C# (aka cs)
 - Java
